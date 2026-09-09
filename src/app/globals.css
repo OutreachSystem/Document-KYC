@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f3f4f6;
+  --foreground: #1f2937;
+
+  --brand-50: #f5f1fb;
+  --brand-100: #ebe3f7;
+  --brand-200: #d5c4ee;
+  --brand-300: #b697e0;
+  --brand-400: #9264cd;
+  --brand-500: #6f3fb5;
+  --brand-600: #5a2d9c;
+  --brand-700: #4a1f85;
+  --brand-800: #3c1a6b;
+  --brand-900: #2e0f57;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-brand-50: var(--brand-50);
+  --color-brand-100: var(--brand-100);
+  --color-brand-200: var(--brand-200);
+  --color-brand-300: var(--brand-300);
+  --color-brand-400: var(--brand-400);
+  --color-brand-500: var(--brand-500);
+  --color-brand-600: var(--brand-600);
+  --color-brand-700: var(--brand-700);
+  --color-brand-800: var(--brand-800);
+  --color-brand-900: var(--brand-900);
+
+  --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
+}
+
+html,
+body {
+  background: var(--background);
+  color: var(--foreground);
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pop-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.2s ease-out;
+}
+.animate-pop-in {
+  animation: pop-in 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.animate-slide-in-right {
+  animation: slide-in-right 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Soft decorative background used by the public verification wizard */
+.verify-bg {
+  background:
+    radial-gradient(1100px 620px at 12% 88%, rgba(236, 190, 232, 0.5), transparent 62%),
+    radial-gradient(900px 520px at 92% 6%, rgba(198, 205, 246, 0.55), transparent 60%),
+    radial-gradient(760px 480px at 78% 96%, rgba(252, 226, 205, 0.45), transparent 58%),
+    linear-gradient(180deg, #f7f6ff 0%, #fdf7fb 100%);
+}
